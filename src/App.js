@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
-import Radium, {StyleRoot} from 'radium';
 
 class App extends Component {
   state = {
@@ -36,13 +35,6 @@ class App extends Component {
 
     this.setState({persons: persons})
 
-    // this.setState({
-    //   persons : [
-    //     {name: "Raji", age: 26},
-    //     {name: event.target.value, age: 26},
-    //     {name: "Raji", age: 26}
-    //   ]
-    // })
   }
 
   togglePersonHandler = () => {
@@ -58,10 +50,6 @@ class App extends Component {
       border: '1px solid blue',
       padding: '8px',
       cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
     };
 
     let persons = null;
@@ -79,25 +67,9 @@ class App extends Component {
                       changed={(event) => this.nameChangedHandler(event, person.id)}
                     />
           })}
-              {/* <Person 
-                click={this.switchNameHandler.bind(this, 'yasara')}
-                name={this.state.persons[0].name} 
-                age={this.state.persons[0].age}
-                changed={this.nameChangedHandler}>hiiii</Person>
-              <Person 
-                //click={this.switchNameHandler.bind(this, 'yasara')}
-                name={this.state.persons[1].name} 
-                age={this.state.persons[1].age}>hiiii </Person>
-              <Person 
-                name={this.state.persons[2].name} 
-                age={this.state.persons[2].age}>hiiii </Person> */}
           </div> 
       );
       style.backgroundColor = 'red';
-      style[':hover'] = {
-        backgroundColor: 'salmon',
-        color: 'black'
-      }
     }
 
     //let classes = ['red', 'bold'].join(' ');
@@ -112,7 +84,7 @@ class App extends Component {
     }
 
     return (
-      <StyleRoot>
+      
       <div className="App">
         <h1>hi, I'm a rect app</h1>
         <p className={classes.join(' ')}>This is working</p>
@@ -125,23 +97,10 @@ class App extends Component {
         </button>
         {persons}
       </div>
-      </StyleRoot>
+      
     );
     }
 }
 
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <h1>hi, I'm a rect app</h1>
-//       <Person name="Rajitha" age="26">hiiii</Person>
-//     </div>
-//   );
-
-//   // return React.createElement('div',null, React.createElement('h1',null, 'I\'m a react app'));
-
-// }
-
-export default Radium(App);
-//export default App;
+export default App;
