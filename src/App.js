@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
-import Radium from 'radium';
+import Radium, {StyleRoot} from 'radium';
 
 class App extends Component {
   state = {
@@ -12,8 +12,6 @@ class App extends Component {
     ],
     showPerson: false,
   }
-
-  // 
   
   deletePersonHandler = (personIndex) =>{
     //const persons = this.state.persons;
@@ -114,7 +112,7 @@ class App extends Component {
     }
 
     return (
-      // <StyleRoot>
+      <StyleRoot>
       <div className="App">
         <h1>hi, I'm a rect app</h1>
         <p className={classes.join(' ')}>This is working</p>
@@ -127,7 +125,7 @@ class App extends Component {
         </button>
         {persons}
       </div>
-      // </StyleRoot>
+      </StyleRoot>
     );
     }
 }
