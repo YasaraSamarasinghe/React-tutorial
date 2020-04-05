@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
-import Person from './Person/Person';
+import classes from './App.css';
+import Person from '../components/Persons/Person/Person';
 
 class App extends Component {
   state = {
@@ -73,26 +73,24 @@ class App extends Component {
     }
 
     //let classes = ['red', 'bold'].join(' ');
-    let classes = [];
+    let assignedClasses = [];
     if(this.state.persons.length <= 2)
     {
-      classes.push('red'); // classes =['red']
+      assignedClasses.push(classes.red); // classes =['red']
     }
     if(this.state.persons.length <= 1)
     {
-      classes.push('bold'); // classes =['red' , 'bold']
+      assignedClasses.push(classes.bold); // classes =['red' , 'bold']
     }
 
     return (
       
-      <div className="App">
+      <div className={classes.App}>
         <h1>hi, I'm a rect app</h1>
-        <p className={classes.join(' ')}>This is working</p>
+        <p className={assignedClasses.join(' ')}>This is working</p>
         <button 
         style={style}
-        //onClick={()=>this.switchNameHandler('tharu')}
-        onClick={this.togglePersonHandler}
-        >
+        onClick={this.togglePersonHandler}>
           Toggle Persons
         </button>
         {persons}
@@ -101,6 +99,5 @@ class App extends Component {
     );
     }
 }
-
 
 export default App;
